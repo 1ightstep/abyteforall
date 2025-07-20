@@ -1,4 +1,6 @@
 .byteWaveContainer {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
   width: 0.7ch;
   height: fit-content;
 }

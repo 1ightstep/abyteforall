@@ -12,7 +12,7 @@ function waveSize(prevSize: number, min: number = 5, max: number = 15) {
 }
 
 export default function ByteWavesContainer() {
-  const numWaves = 500;
+  const numWaves = window.innerWidth / 7;
   let currSize = 0;
 
   useGSAP(() => {
