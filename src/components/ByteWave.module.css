@@ -1,0 +1,9 @@
+.byteWaveContainer {
+  width: 0.7ch;
+  height: fit-content;
+}
+
+.byteWave {
+  text-align: center;
+  overflow-wrap: break-word;
+}
