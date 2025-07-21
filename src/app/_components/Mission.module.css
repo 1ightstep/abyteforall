@@ -1,0 +1,23 @@
+.mission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.textContent {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sphereSceneContainer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
