@@ -83,7 +83,7 @@ function randomPosition(min: number, max: number): [number, number, number] {
 }
 
 export default function SphereScene() {
-  const [radius, setRadius] = useState(window.innerWidth / 1200);
+  const [radius, setRadius] = useState(2.5);
 
   useEffect(() => {
     const onResize = () => {
@@ -136,10 +136,10 @@ export default function SphereScene() {
         orbitRadius={radius * 13}
         speed={0.006}
       />
-      {Array.from({ length: 200 }).map((_, index) => {
+      {Array.from({ length: 1000 }).map((_, index) => {
         return (
-          <mesh key={index} position={randomPosition(-100, 100)}>
-            <sphereGeometry args={[0.1, 8, 8]} />
+          <mesh key={index} position={randomPosition(-50, 50)}>
+            <sphereGeometry args={[0.05, 8, 8]} />
             <meshBasicMaterial color="black" />
           </mesh>
         );
