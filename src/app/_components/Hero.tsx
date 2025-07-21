@@ -3,7 +3,7 @@ import styles from "./Hero.module.css";
 import ByteWavesContainer from "@/components/ByteWavesContainer";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
@@ -14,7 +14,7 @@ export default function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLHeadingElement>(null);
 
-  useGSAP(() => {
+  useEffect(() => {
     if (!titleRef.current || !descriptionRef.current) return;
     let titleSplit = new SplitType(titleRef.current);
     let descriptionSplit = new SplitType(descriptionRef.current);
@@ -45,7 +45,7 @@ export default function Hero() {
       },
     });
     parallax.to(heroRef.current, {
-      y: 1000,
+      yPercent: 80,
     });
   }, []);
   return (

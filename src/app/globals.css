@@ -1,6 +1,6 @@
 :root {
-  --primary-color: "black";
-  --background-color: "white";
+  --primary-color: black;
+  --background-color: white;
   --text-xs: 0.7rem;
   --text-sm: 1rem;
   --text-base: 2rem;

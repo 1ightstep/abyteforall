@@ -3,87 +3,91 @@ import { useGSAP } from "@gsap/react";
 import styles from "./ByteWave.module.css";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
+
 gsap.registerPlugin(TextPlugin);
 
-//umm i am no professional developer, maybe just too lazy to optimize it in
-//ByteWave container by only using one listener
-// i am so sorry for your eyes reader
 type ByteWaveProps = {
   length: number;
 };
 
 function randomWave(length: number) {
-  return Array.from({ length }, () => (Math.random() < 0.5 ? "0" : "1"));
+  return Array.from({ length }, () => (Math.random() < 0.5 ? "0" : "1")).join(
+    ""
+  );
 }
 
 export default function ByteWave({ length }: ByteWaveProps) {
-  const effectRange = 50;
-  let [wave, setWave] = useState(() => randomWave(length));
   const waveRef = useRef<HTMLParagraphElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const effectRange = 50;
+  const isScrolling = useRef(false);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      let rect = containerRef.current?.getBoundingClientRect();
-      let mouseX = e.clientX;
-      let mouseY = e.clientY;
-      if (rect) {
-        let middleX = (rect.left + rect.right) / 2;
-        let middleY = (rect.top + rect.bottom) / 2;
-        const factorX = 0.1;
-        const factorY = 0.15;
-
-        const distanceX = Math.abs(mouseX - middleX);
-        const distanceY = Math.abs(mouseY - middleY);
-
-        const drop =
-          Math.max(0, 40 - distanceX * factorX) +
-          (window.innerHeight - distanceY) * factorY;
-
-        if (
-          mouseX >= rect.left - effectRange &&
-          mouseX <= rect.right + effectRange
-        ) {
-          gsap.to(containerRef.current, {
-            y: drop,
-            duration: 0.5,
-            ease: "linear",
-          });
-        } else {
-          gsap.to(containerRef.current, {
-            y: 0,
-            duration: 0.5,
-            ease: "linear",
-          });
-        }
-      }
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-  }, []);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWave(randomWave(length));
+  useGSAP(() => {
+    const updateWave = () => {
+      const newWave = randomWave(length);
       gsap.to(waveRef.current, {
-        text: {
-          value: wave.join(""),
-        },
+        text: { value: newWave },
         duration: 0.05,
         ease: "power1.inOut",
-        onComplete: () => {
-          setWave(randomWave(length));
-        },
       });
-    }, 100);
-    return () => clearInterval(interval);
-  }, [wave]);
+    };
+
+    const interval = setInterval(updateWave, 100);
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (isScrolling.current) return;
+
+      const rect = containerRef.current?.getBoundingClientRect();
+      if (!rect) return;
+
+      const middleX = (rect.left + rect.right) / 2;
+      const middleY = (rect.top + rect.bottom) / 2;
+      const distanceX = Math.abs(e.clientX - middleX);
+      const distanceY = Math.abs(e.clientY - middleY);
+
+      const factorX = 0.1;
+      const factorY = 0.15;
+
+      const drop =
+        Math.max(0, 40 - distanceX * factorX) +
+        (window.innerHeight - distanceY) * factorY;
+
+      const withinRange =
+        e.clientX >= rect.left - effectRange &&
+        e.clientX <= rect.right + effectRange;
+
+      gsap.to(containerRef.current, {
+        y: withinRange ? drop : 0,
+        duration: 0.5,
+        ease: "linear",
+      });
+    };
+
+    const scrollTimeoutRef = { current: 0 as any };
+
+    const handleScroll = () => {
+      isScrolling.current = true;
+      clearTimeout(scrollTimeoutRef.current);
+      scrollTimeoutRef.current = setTimeout(() => {
+        isScrolling.current = false;
+      }, 100);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
+      clearInterval(interval);
+    };
+  }, [length]);
 
   return (
     <div className={styles.byteWaveContainer} ref={containerRef}>
       <p className={styles.byteWave} ref={waveRef}>
-        {wave.map((char, index) => {
-          return <span key={index}>{char}</span>;
-        })}
+        {randomWave(length)}
       </p>
     </div>
   );
