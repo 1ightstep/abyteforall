@@ -4,11 +4,16 @@ import ByteWavesContainer from "@/components/ByteWavesContainer";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import SplitType, { TargetElement } from "split-type";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
+  const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLHeadingElement>(null);
+
   useGSAP(() => {
     if (!titleRef.current || !descriptionRef.current) return;
     let titleSplit = new SplitType(titleRef.current);
@@ -23,15 +28,28 @@ export default function Hero() {
     heroTl.from(
       descriptionSplit.chars,
       {
+        trigger: heroRef.current,
         opacity: 0,
         stagger: 0.01,
         duration: 1.5,
       },
       "-=0.5"
     );
-  });
+
+    const parallax = gsap.timeline({
+      scrollTrigger: {
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        markers: true,
+      },
+    });
+    parallax.to(heroRef.current, {
+      y: 1000,
+    });
+  }, []);
   return (
-    <div className={styles.hero}>
+    <div className={styles.hero} ref={heroRef}>
       <div className={styles.heroMainContainer}>
         <h1 className={styles.heroTitle} ref={titleRef}>
           The new change has arrived. <br /> A new order will rise.

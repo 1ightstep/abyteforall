@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { geistSans } from "@/app/ui/font";
+import { LenisProvider } from "@/components/LenisProvider";
 
 export const metadata: Metadata = {
   title: "A Byte For All",
@@ -15,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.className}`}>{children}</body>
+      <LenisProvider>
+        <body className={`${geistSans.className}`}>{children}</body>
+      </LenisProvider>
     </html>
   );
 }
