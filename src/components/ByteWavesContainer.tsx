@@ -2,7 +2,6 @@
 import styles from "./ByteWavesContainer.module.css";
 import ByteWave from "@/components/ByteWave";
 import React, { useEffect, useState } from "react";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 function waveSize(prevSize: number, min: number = 5, max: number = 15) {

@@ -35,18 +35,6 @@ export default function Hero() {
       },
       "-=0.5"
     );
-
-    const parallax = gsap.timeline({
-      scrollTrigger: {
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-        markers: true,
-      },
-    });
-    parallax.to(heroRef.current, {
-      yPercent: 80,
-    });
   }, []);
   return (
     <div className={styles.hero} ref={heroRef}>
