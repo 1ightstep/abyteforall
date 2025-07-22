@@ -45,7 +45,6 @@ export default function Opportunities() {
       scrollTrigger: {
         trigger: opportunitiesRef.current,
         start: "top top",
-        markers: true,
       },
     });
 

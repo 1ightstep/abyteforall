@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { geistSans } from "@/app/ui/font";
 import { LenisProvider } from "@/components/LenisProvider";
+import "@/lib/fontawesome";
 
 export const metadata: Metadata = {
   title: "A Byte For All",

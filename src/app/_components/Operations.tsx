@@ -12,7 +12,7 @@ export default function Operations() {
   const operationsRef = useRef<HTMLDivElement>(null);
   useGSAP(() => {
     if (!operationsRef.current) return;
-    const titleSplit = new SplitType(".OPtitle-anim");
+    const titleSplit = new SplitType(".title-anim");
 
     const operationsTl = gsap.timeline({
       scrollTrigger: {
@@ -22,12 +22,12 @@ export default function Operations() {
     });
     operationsTl.from(titleSplit.chars, {
       opacity: 0,
-      stagger: 0.01,
+      stagger: 0.05,
       x: -10,
       duration: 0.5,
     });
     operationsTl.from(
-      ".OPitem-anim",
+      ".item-anim",
       {
         opacity: 0,
         stagger: 0.1,
@@ -35,7 +35,7 @@ export default function Operations() {
       "-=0.5"
     );
     operationsTl.from(
-      ".OPsubtitle-anim",
+      ".subtitle-anim",
       {
         opacity: 0,
         stagger: 0.1,
@@ -43,7 +43,7 @@ export default function Operations() {
       "-=0.2"
     );
     operationsTl.from(
-      ".OPdescription-anim",
+      ".description-anim",
       {
         opacity: 0,
         stagger: 0.1,
@@ -55,12 +55,12 @@ export default function Operations() {
     <div className={styles.operations} ref={operationsRef}>
       <div className={styles.contentContainer}>
         <div className={styles.title}>
-          <h2 className="OPtitle-anim">Our Operations</h2>
+          <h2 className="title-anim">Our Operations</h2>
         </div>
         <div className={styles.itemContainer}>
-          <div className={`${styles.item} OPitem-anim`}>
-            <h3 className="OPsubtitle-anim">Training</h3>
-            <h4 className="OPdescription-anim">
+          <div className={`${styles.item} item-anim`}>
+            <h3 className="subtitle-anim">Training</h3>
+            <h4 className="description-anim">
               We equip aspiring web developers with foundational skills through
               structured coding experiences, mock projects, and guided
               mentorship. Trainees gain real-world exposure by working under our
@@ -68,9 +68,9 @@ export default function Operations() {
               portfolio-ready work.
             </h4>
           </div>
-          <div className={`${styles.item} OPitem-anim`}>
-            <h3 className="OPsubtitle-anim">Development</h3>
-            <h4 className="OPdescription-anim">
+          <div className={`${styles.item} item-anim`}>
+            <h3 className="subtitle-anim">Development</h3>
+            <h4 className="description-anim">
               We deploy our trained developers to work on real-world
               projects—collaborating with local businesses and community
               partners to design and build custom websites and digital
@@ -78,9 +78,9 @@ export default function Operations() {
               practice into purpose.
             </h4>
           </div>
-          <div className={`${styles.item} OPitem-anim`}>
-            <h3 className="OPsubtitle-anim">Partnerships</h3>
-            <h4 className="OPdescription-anim">
+          <div className={`${styles.item} item-anim`}>
+            <h3 className="subtitle-anim">Partnerships</h3>
+            <h4 className="description-anim">
               We partner with schools, clubs, and other nonprofits to bring the
               best STEM opportunities to our members. By collaborating across
               communities, we create more chances for students to grow, lead,
