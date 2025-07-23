@@ -71,7 +71,7 @@ export default function ByteWave({ length }: ByteWaveProps) {
       clearTimeout(scrollTimeoutRef.current);
       scrollTimeoutRef.current = setTimeout(() => {
         isScrolling.current = false;
-      }, 100);
+      }, 50);
     };
 
     window.addEventListener("mousemove", handleMouseMove);

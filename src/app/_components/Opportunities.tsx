@@ -161,7 +161,7 @@ export default function Opportunities() {
               communities.
             </h4>
           </div>
-          <div className={styles.rolesItem}>
+          <div className={`${styles.rolesItem} OPProles-item-anim`}>
             <h3>Instructor/Trainer</h3>
             <h4>
               Trainers guide trainees through their learning journeys—hosting
@@ -169,7 +169,7 @@ export default function Opportunities() {
               ensure each new developer is ready for impactful work.
             </h4>
           </div>
-          <div className={styles.rolesItem}>
+          <div className={`${styles.rolesItem} OPProles-item-anim`}>
             <h3>Team Manager</h3>
             <h4>
               Team Managers oversee squads of developers (typically 4 +

@@ -40,7 +40,7 @@ export default function Hero() {
     <div className={styles.hero} ref={heroRef} id="hero">
       <div className={styles.heroMainContainer}>
         <h1 className={styles.heroTitle} ref={titleRef}>
-          The new change has arrived. <br /> A new order will rise.
+          Change has arrived. <br />A new path forward begins today.
         </h1>
         <h3 className={styles.heroDescription} ref={descriptionRef}>
           A Byte For All is a new youth-led 501c3 nonprofit created to empower
