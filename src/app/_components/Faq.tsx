@@ -49,7 +49,7 @@ export default function Faq() {
   };
   return (
     <div className={styles.faq} ref={faqRef} id="faq">
-      <div className={styles.title}>
+      <div className={styles.title} onClick={removeActive}>
         <h2 className="FAQtitle-anim">FAQ</h2>
       </div>
       <div className={styles.questionsContainer}>
