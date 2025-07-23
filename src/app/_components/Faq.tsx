@@ -14,7 +14,7 @@ export default function Faq() {
     const faqTl = gsap.timeline({
       scrollTrigger: {
         trigger: faqRef.current,
-        start: "top top",
+        start: "top 70%",
       },
     });
 
