@@ -22,6 +22,7 @@ export default function ByteWave({ length }: ByteWaveProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const effectRange = 50;
   const isScrolling = useRef(false);
+  const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useGSAP(() => {
     const updateWave = () => {
@@ -64,11 +65,9 @@ export default function ByteWave({ length }: ByteWaveProps) {
       });
     };
 
-    const scrollTimeoutRef = { current: 0 as any };
-
     const handleScroll = () => {
       isScrolling.current = true;
-      clearTimeout(scrollTimeoutRef.current);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
       scrollTimeoutRef.current = setTimeout(() => {
         isScrolling.current = false;
       }, 50);

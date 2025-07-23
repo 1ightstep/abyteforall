@@ -2,7 +2,6 @@
 import styles from "./Hero.module.css";
 import ByteWavesContainer from "@/components/ByteWavesContainer";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { useRef, useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
@@ -16,8 +15,8 @@ export default function Hero() {
 
   useEffect(() => {
     if (!titleRef.current || !descriptionRef.current) return;
-    let titleSplit = new SplitType(titleRef.current);
-    let descriptionSplit = new SplitType(descriptionRef.current);
+    const titleSplit = new SplitType(titleRef.current);
+    const descriptionSplit = new SplitType(descriptionRef.current);
     const heroTl = gsap.timeline();
     heroTl.from(titleSplit.chars, {
       opacity: 0,

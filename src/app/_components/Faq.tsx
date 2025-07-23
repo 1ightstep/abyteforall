@@ -36,14 +36,14 @@ export default function Faq() {
     );
   }, []);
 
-  let allItems: HTMLElement[] | null;
+  const allItems = useRef<HTMLElement[] | null>(null);
   useEffect(() => {
-    allItems = gsap.utils.toArray(".FAQitem-anim");
+    allItems.current = gsap.utils.toArray(".FAQitem-anim");
   }, []);
 
   const removeActive = () => {
-    if (!allItems) return;
-    allItems.forEach((e, _) => {
+    if (!allItems.current) return;
+    allItems.current.forEach((e, _) => {
       e.classList.remove(styles.answerActive);
     });
   };

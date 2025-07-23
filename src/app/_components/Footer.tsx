@@ -43,7 +43,7 @@ export default function Footer() {
   return (
     <div className={styles.footer} id="footer" ref={footerRef}>
       <div className={styles.top}>
-        <h1 className="FOtitle-anim">LET'S CONNECT</h1>
+        <h1 className="FOtitle-anim">LET&apos;S CONNECT</h1>
         <div className={styles.contactContainer}>
           <a
             className={`${styles.contactItem} FOsocial-anim`}
@@ -51,6 +51,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            {/* @ts-expect-error post no issues, ts is returning issue*/}
             <FontAwesomeIcon icon={faDiscord} />
             Our Discord
           </a>
@@ -61,6 +62,7 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
+            {/* @ts-expect-error post no issues, ts is returning issue*/}
             <FontAwesomeIcon icon={faInstagram} />
             official_abyteforall
           </a>

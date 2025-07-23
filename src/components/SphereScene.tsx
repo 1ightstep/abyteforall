@@ -74,7 +74,7 @@ function OrbitingSphere({
 }
 
 function randomPosition(min: number, max: number): [number, number, number] {
-  let position: [number, number, number] = [
+  const position: [number, number, number] = [
     Math.random() * (max - min + 1) + min,
     Math.random() * (max - min + 1) + min,
     Math.random() * (max - min + 1) + min,
