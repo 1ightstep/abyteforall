@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import SplitType from "split-type";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Faq() {
@@ -36,8 +36,13 @@ export default function Faq() {
     );
   }, []);
 
-  const allItems: HTMLElement[] = gsap.utils.toArray(".FAQitem-anim");
+  let allItems: HTMLElement[] | null;
+  useEffect(() => {
+    allItems = gsap.utils.toArray(".FAQitem-anim");
+  }, []);
+
   const removeActive = () => {
+    if (!allItems) return;
     allItems.forEach((e, _) => {
       e.classList.remove(styles.answerActive);
     });

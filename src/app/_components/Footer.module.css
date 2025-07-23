@@ -58,7 +58,7 @@
   gap: 1rem;
 }
 
-.bottom a {
+.navigationContainer a {
   cursor: pointer;
   font-size: var(--text-xs);
 }
