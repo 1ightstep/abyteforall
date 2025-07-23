@@ -39,6 +39,7 @@ export default function Footer() {
       "-=1"
     );
   }, []);
+
   return (
     <div className={styles.footer} id="footer" ref={footerRef}>
       <div className={styles.top}>

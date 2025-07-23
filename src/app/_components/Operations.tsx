@@ -40,7 +40,7 @@ export default function Operations() {
         opacity: 0,
         stagger: 0.1,
       },
-      "-=0.2"
+      "-=0.4"
     );
     operationsTl.from(
       ".description-anim",
@@ -48,7 +48,7 @@ export default function Operations() {
         opacity: 0,
         stagger: 0.1,
       },
-      "-=0.2"
+      "-=0.4"
     );
   }, []);
   return (
