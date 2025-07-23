@@ -53,7 +53,7 @@ export default function Mission() {
     });
   }, []);
   return (
-    <div className={styles.mission} ref={missionRef}>
+    <div className={styles.mission} ref={missionRef} id="mission">
       <div className={styles.textContent}>
         <h2 ref={titleRef}>Our Mission</h2>
         <h3 ref={descriptionRef}>

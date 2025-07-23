@@ -15,7 +15,6 @@ export default function Faq() {
       scrollTrigger: {
         trigger: faqRef.current,
         start: "top top",
-        markers: true,
       },
     });
 
@@ -44,7 +43,7 @@ export default function Faq() {
     });
   };
   return (
-    <div className={styles.faq} ref={faqRef}>
+    <div className={styles.faq} ref={faqRef} id="faq">
       <div className={styles.title}>
         <h2 className="FAQtitle-anim">FAQ</h2>
       </div>

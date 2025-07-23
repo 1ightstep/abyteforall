@@ -37,7 +37,7 @@ export default function Hero() {
     );
   }, []);
   return (
-    <div className={styles.hero} ref={heroRef}>
+    <div className={styles.hero} ref={heroRef} id="hero">
       <div className={styles.heroMainContainer}>
         <h1 className={styles.heroTitle} ref={titleRef}>
           The new change has arrived. <br /> A new order will rise.

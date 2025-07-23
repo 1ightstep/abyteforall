@@ -86,7 +86,11 @@ export default function Opportunities() {
   }, []);
 
   return (
-    <div className={styles.opportunities} ref={opportunitiesRef}>
+    <div
+      className={styles.opportunities}
+      ref={opportunitiesRef}
+      id="opportunities"
+    >
       <div className={styles.container}>
         <div className={styles.textContainer}>
           <h2 className="OPPtitle-anim">Opportunities</h2>

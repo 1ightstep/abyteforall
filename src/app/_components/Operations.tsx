@@ -52,7 +52,7 @@ export default function Operations() {
     );
   }, []);
   return (
-    <div className={styles.operations} ref={operationsRef}>
+    <div className={styles.operations} ref={operationsRef} id="operations">
       <div className={styles.contentContainer}>
         <div className={styles.title}>
           <h2 className="title-anim">Our Operations</h2>

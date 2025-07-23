@@ -4,6 +4,7 @@ import Mission from "./_components/Mission";
 import Operations from "./_components/Operations";
 import Opportunities from "./_components/Opportunities";
 import Faq from "./_components/Faq";
+import Footer from "./_components/Footer";
 
 export default function Main() {
   return (
@@ -13,6 +14,7 @@ export default function Main() {
       <Operations />
       <Opportunities />
       <Faq />
+      <Footer />
     </main>
   );
 }
