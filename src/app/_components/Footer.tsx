@@ -78,16 +78,16 @@ export default function Footer() {
       <div className={styles.bottom}>
         <p>© {new Date().getFullYear()} A Byte For All. All rights reserved.</p>
         <div className={styles.navigationContainer}>
-          <Link to="hero" smooth={true} duration={1000}>
+          <Link to="hero" smooth={true} duration={1000} offset={-550}>
             Top
           </Link>
-          <Link to="mission" smooth={true} duration={1000}>
+          <Link to="mission" smooth={true} duration={1000} offset={-500}>
             Mission
           </Link>
-          <Link to="operations" smooth={true} duration={1000}>
+          <Link to="operations" smooth={true} duration={1000} offset={-500}>
             Operations
           </Link>
-          <Link to="opportunities" smooth={true} duration={1000}>
+          <Link to="opportunities" smooth={true} duration={1000} offset={-500}>
             Opportunities
           </Link>
           <Link to="faq" smooth={true} duration={1000}>

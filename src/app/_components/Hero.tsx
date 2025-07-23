@@ -35,6 +35,16 @@ export default function Hero() {
       },
       "-=0.5"
     );
+
+    gsap.to(heroRef.current, {
+      y: 500,
+      ease: "none",
+      scrollTrigger: {
+        trigger: heroRef.current,
+        start: "top top",
+        scrub: true,
+      },
+    });
   }, []);
   return (
     <div className={styles.hero} ref={heroRef} id="hero">

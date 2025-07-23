@@ -50,6 +50,16 @@ export default function Operations() {
       },
       "-=0.4"
     );
+
+    gsap.to(operationsRef.current, {
+      y: 500,
+      ease: "none",
+      scrollTrigger: {
+        trigger: operationsRef.current,
+        start: "bottom bottom",
+        scrub: true,
+      },
+    });
   }, []);
   return (
     <div className={styles.operations} ref={operationsRef} id="operations">

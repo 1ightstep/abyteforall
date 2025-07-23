@@ -14,7 +14,7 @@ export default function ByteWavesContainer() {
   const [numWaves, setNumWaves] = useState(0);
   let currSize = 0;
   useEffect(() => {
-    setNumWaves(Math.floor(window.innerWidth / 7));
+    setNumWaves(Math.floor(window.innerWidth / 12));
   }, []);
 
   useEffect(() => {

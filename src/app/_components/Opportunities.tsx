@@ -96,6 +96,16 @@ export default function Opportunities() {
       },
       "-=0.5"
     );
+
+    gsap.to(opportunitiesRef.current, {
+      y: 500,
+      ease: "none",
+      scrollTrigger: {
+        trigger: opportunitiesRef.current,
+        start: "bottom bottom",
+        scrub: true,
+      },
+    });
   }, []);
 
   return (

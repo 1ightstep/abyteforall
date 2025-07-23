@@ -51,6 +51,16 @@ export default function Mission() {
       opacity: 0,
       duration: 2,
     });
+
+    gsap.to(missionRef.current, {
+      y: 500,
+      ease: "none",
+      scrollTrigger: {
+        trigger: missionRef.current,
+        start: "bottom bottom",
+        scrub: true,
+      },
+    });
   }, []);
   return (
     <div className={styles.mission} ref={missionRef} id="mission">

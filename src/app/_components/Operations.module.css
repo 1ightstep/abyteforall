@@ -1,4 +1,5 @@
 .operations {
+  position: relative;
   border-top: 1px solid black;
   background-color: var(--background-color);
   width: 100vw;
@@ -20,6 +21,9 @@
 
 .itemContainer {
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
   width: 100%;
   gap: clamp(2.5rem, 2rem, 5rem);
 }
@@ -30,14 +34,15 @@
   justify-content: flex-start;
   align-items: flex-start;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  height: 100%;
-  width: 100%;
-  padding: 1rem 2rem 0.5rem 2rem;
+  width: clamp(70%, 100%, 100%);
+  padding: 1rem 2rem 1rem 2rem;
   border-radius: 1rem;
 }
 
 @media (max-width: 1200px) {
   .itemContainer {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
