@@ -1,11 +1,11 @@
 :root {
   --primary-color: black;
   --background-color: white;
-  --text-xs: clamp(0.6rem, 0.8vw, 0.8rem);
-  --text-sm: clamp(0.8rem, 1vw, 1.2rem);
-  --text-base: clamp(1rem, 1.5vw, 2rem);
-  --text-lg: clamp(1.3rem, 2vw, 2.6rem);
-  --text-xl: clamp(2rem, 3vw, 4.5rem);
+  --text-xs: clamp(0.4rem, 0.8vw, 0.8rem);
+  --text-sm: clamp(0.6rem, 1vw, 1.2rem);
+  --text-base: clamp(0.8rem, 1.5vw, 2rem);
+  --text-lg: clamp(1.1rem, 2vw, 2.6rem);
+  --text-xl: clamp(1.8rem, 3vw, 4.5rem);
 }
 
 html {

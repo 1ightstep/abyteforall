@@ -5,6 +5,7 @@ import SplitType from "split-type";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-scroll";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Opportunities() {
@@ -65,6 +66,18 @@ export default function Opportunities() {
       "-=0.5"
     );
 
+    oppoTl.fromTo(
+      ".OPPleap-anim",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 0.5,
+      },
+      "-=0.8"
+    );
+
     oppoTl.from(
       ".OPProles-container-anim",
       {
@@ -100,6 +113,14 @@ export default function Opportunities() {
             in your community. Gain hands-on experience, grow your skills, and
             be part of something that actually matters.
           </h3>
+          <Link
+            className="OPPleap-anim"
+            to="footer"
+            smooth={true}
+            duration={1000}
+          >
+            Take the Leap
+          </Link>
         </div>
         <div
           className={`${styles.rolesContainer} OPProles-container-anim`}
