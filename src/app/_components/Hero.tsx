@@ -52,9 +52,10 @@ export default function Hero() {
           Change has arrived. <br />A new path forward begins today.
         </h1>
         <h3 className={styles.heroDescription} ref={descriptionRef}>
-          A Byte For All is a new youth-led 501(c)(3) nonprofit created to
-          empower youth-powered innovations. We train developers and employ them
-          to real-world projects that impact the world.
+          A Byte For All is a youth-led nonprofit project fiscally sponsored
+          under Hack Club’s 501(c)(3) status. We empower student-driven
+          innovation by training young developers and connecting them with
+          real-world projects that make a tangible impact.
         </h3>
       </div>
       <ByteWavesContainer />
