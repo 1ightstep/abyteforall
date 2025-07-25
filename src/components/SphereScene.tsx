@@ -84,8 +84,12 @@ function randomPosition(min: number, max: number): [number, number, number] {
 
 export default function SphereScene() {
   const [radius, setRadius] = useState(2.5);
+  const [isClient, setIsClient] = useState(false);
+  const [isControl, setIsControl] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+    setIsControl(window.innerWidth > 800);
     const onResize = () => {
       setRadius(window.innerWidth / 1200);
     };
@@ -144,7 +148,7 @@ export default function SphereScene() {
           </mesh>
         );
       })}
-      <OrbitControls enableZoom={false} />
+      {isClient && isControl && <OrbitControls enableZoom={false} />}
     </Canvas>
   );
 }
