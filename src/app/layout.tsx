@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "A Byte For All",
   description:
     "Youth-led 501(c)(3) non-profit organization | Training the next generation of developers for real-world projects and impact.",
+  icons: {
+    icon: "./logo.png",
+  },
 };
 
 export default function RootLayout({
