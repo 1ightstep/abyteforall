@@ -21,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Analytics />
       <LenisProvider>
         <body className={`${geistSans.className}`}>{children}</body>
       </LenisProvider>
