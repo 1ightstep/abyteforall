@@ -36,7 +36,7 @@ export default function Hero() {
     );
 
     gsap.to(heroRef.current, {
-      y: 500,
+      y: 300,
       ease: "none",
       scrollTrigger: {
         trigger: heroRef.current,

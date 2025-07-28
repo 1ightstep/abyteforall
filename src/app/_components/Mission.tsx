@@ -53,7 +53,7 @@ export default function Mission() {
     });
 
     gsap.to(missionRef.current, {
-      y: 500,
+      y: 300,
       ease: "none",
       scrollTrigger: {
         trigger: missionRef.current,

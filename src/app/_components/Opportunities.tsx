@@ -98,7 +98,7 @@ export default function Opportunities() {
     );
 
     gsap.to(opportunitiesRef.current, {
-      y: 500,
+      y: 300,
       ease: "none",
       scrollTrigger: {
         trigger: opportunitiesRef.current,

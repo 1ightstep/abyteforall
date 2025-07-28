@@ -52,7 +52,7 @@ export default function Operations() {
     );
 
     gsap.to(operationsRef.current, {
-      y: 500,
+      y: 300,
       ease: "none",
       scrollTrigger: {
         trigger: operationsRef.current,
