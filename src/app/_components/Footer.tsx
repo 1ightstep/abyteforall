@@ -47,7 +47,7 @@ export default function Footer() {
         <div className={styles.contactContainer}>
           <a
             className={`${styles.contactItem} FOsocial-anim`}
-            href="https://discord.com/invite/v3qc5xj9Xc"
+            href="https://discord.com/invite/HC7v25jE53"
             target="_blank"
             rel="noopener noreferrer"
           >
